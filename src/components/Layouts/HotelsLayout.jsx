@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
+import HeaderHotels from "../HeaderHotels";
 
 
 const HotelsLayout = () => {
   return (
     <>
-      <Header />
+      <HeaderHotels />
       <div className="px-36 py-24">{<Outlet />}</div>
     </>
   );
