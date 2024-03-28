@@ -1,14 +1,10 @@
-import Header from "./components/Header";
-import HomePage from "./components/HomePage";
-import SearchBar from "./components/SearchBar";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
 
 function App() {
   return (
     <>
-      <Header />
-      <div className="px-36 py-24">
-        <HomePage />
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 }
