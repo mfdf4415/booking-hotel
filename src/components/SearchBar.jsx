@@ -7,6 +7,7 @@ import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { format } from "date-fns";
+import { createSearchParams, useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [openOptions, setOpenOptions] = useState(false);
@@ -26,6 +27,7 @@ const SearchBar = () => {
   ]);
   const refDate = useRef();
   useOutsideClick(refDate, () => setOpenDate(false), "dateDropdown");
+  const navigate = useNavigate();
 
   const handleSetOptions = (name, operation) => {
     setOptions((prev) => {
@@ -36,6 +38,16 @@ const SearchBar = () => {
     });
   };
 
+  const handleSearch = () => {
+    const encodedParams = createSearchParams({
+      date: JSON.stringify(date),
+      options: JSON.stringify(options),
+      desenation: desenation,
+    });
+
+    navigate({ pathname: "/hotels", search: encodedParams.toString() });
+  };
+
   return (
     <div className="bg-[#fff] relative top-20 p-5 shadow-md rounded-md flex gap-2 flex-wrap w-full items-center z-50">
       <div className="rounded-md flex-auto border-solid border-[1px] border-border">
@@ -43,6 +55,7 @@ const SearchBar = () => {
           <LiaBedSolid className="text-light text-2xl " />
           <input
             onChange={(e) => setDesenation(e.target.value)}
+            value={desenation}
             type="text"
             className="flex-auto text-bold placeholder:text-bold"
             placeholder="Where are you going?"
@@ -95,7 +108,10 @@ const SearchBar = () => {
         )}
       </div>
       <div className="rounded-md flex-auto">
-        <button className="w-full text-lg font-semibold bg-primary px-8 py-4 text-[#fff] rounded-md">
+        <button
+          onClick={handleSearch}
+          className="w-full text-lg font-semibold bg-primary px-8 py-4 text-[#fff] rounded-md"
+        >
           Search
         </button>
       </div>
