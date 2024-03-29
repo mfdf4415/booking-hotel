@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 
 const HeaderHotels = () => {
   return (
-    <header className="w-full px-36 py-8 bg-gradient-to-l from-primary to-[#026ce4]">
+    <header className="sticky top-0 w-full px-36 py-8 bg-gradient-to-l from-primary to-[#026ce4]">
       <div className="flex items-center justify-between">
         <h1 className="text-[#fff] text-2xl font-bold">Booking.App</h1>
         <div className="flex gap-6 items-center">
@@ -16,7 +16,9 @@ const HeaderHotels = () => {
           </button>
         </div>
       </div>
-      <SearchBar />
+      <div className="relative top-20">
+        <SearchBar />
+      </div>
     </header>
   );
 };

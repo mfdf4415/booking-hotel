@@ -24,7 +24,9 @@ const Header = () => {
           Search low prices on hotels, homes and much more....
         </p>
       </div>
+      <div className="w-full relative top-20">
       <SearchBar />
+      </div>
     </header>
   );
 };

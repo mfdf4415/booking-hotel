@@ -49,7 +49,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="bg-[#fff] relative top-20 p-5 shadow-md rounded-md flex gap-2 flex-wrap w-full items-center z-50">
+    <div className="bg-[#fff] p-5 shadow-md rounded-md flex gap-2 flex-wrap w-full items-center z-50">
       <div className="rounded-md flex-auto border-solid border-[1px] border-border">
         <div className="flex gap-2 px-3 py-4 rounded-md">
           <LiaBedSolid className="text-light text-2xl " />
