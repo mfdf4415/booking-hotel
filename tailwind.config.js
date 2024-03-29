@@ -9,6 +9,7 @@ export default {
     colors: {
       primary: "#026ce4",
       light: "#595959",
+      backG:"#f6f7fa",
       bold: "#1a1a1a",
       orange: "#FFB700",
       border: "#eceff3",

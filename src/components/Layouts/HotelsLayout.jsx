@@ -6,7 +6,7 @@ const HotelsLayout = () => {
   return (
     <>
       <HeaderHotels />
-      <div className="px-36 py-24">{<Outlet />}</div>
+      <div className="px-36 py-24 bg-backG">{<Outlet />}</div>
     </>
   );
 };
