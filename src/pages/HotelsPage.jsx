@@ -1,4 +1,4 @@
-import HotelList from "../components/HotelList";
+import HotelsList from "../components/HotelsList";
 import mapImg from "../assets/images/bg_mapV8.87d8e59989a401c2ce2bc772fea4a32a.png";
 
 const HotelsPage = () => {
@@ -8,7 +8,7 @@ const HotelsPage = () => {
         <img src={mapImg} className="absolute object-cover top-0 left-0 w-full h-full" />
         <button className="bg-primary text-[#fff] py-2 px-4 rounded-lg z-50">Show on map</button>
       </div>
-      <HotelList />
+      <HotelsList />
     </div>
   );
 };

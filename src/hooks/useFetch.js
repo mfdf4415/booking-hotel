@@ -10,7 +10,7 @@ export const useFetch = (url, query = "") => {
         const fetch = async () => {
             try {
                 setIsLoading(true)
-                const { data } = await axios.get(`${url}/${query}`)
+                const { data } = await axios.get(`${url}?${query}`)
                 setData(data)
             } catch (error) {
                 setData([])
