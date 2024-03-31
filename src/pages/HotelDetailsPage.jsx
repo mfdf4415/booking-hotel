@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import mapImg from "../assets/images/bg_mapV8.87d8e59989a401c2ce2bc772fea4a32a.png";
+import ShowMap from "../components/ShowMap";
 
 const HotelDetailsPage = () => {
   const { id } = useParams();
@@ -64,15 +64,7 @@ const Overview = ({ data }) => {
         </div>
       </div>
       <div>
-        <div className="relative w-[270px] h-[120px] flex items-center justify-center">
-          <img
-            src={mapImg}
-            className="absolute object-cover top-0 left-0 w-full h-full"
-          />
-          <button className="bg-primary text-[#fff] py-2 px-4 rounded-lg z-50">
-            Show on map
-          </button>
-        </div>
+        <ShowMap />
       </div>
     </div>
   );
