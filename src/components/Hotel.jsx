@@ -1,6 +1,15 @@
+import { useNavigate } from "react-router-dom";
+
 const Hotel = ({ data }) => {
+  const navigate = useNavigate()
+
+  const handleNavigate = () =>{
+    navigate(`${data.id}`)
+  }
+
+
   return (
-    <div className="bg-[#fff] border-[.5px] border-solid border-[#ccc] rounded-xl flex overflow-hidden">
+    <div onClick={handleNavigate} className="bg-[#fff] cursor-pointer border-[.5px] border-solid border-[#ccc] rounded-xl flex overflow-hidden">
       <div className="w-[35%]">
         <img src={data.picture_url.url} className="w-full h-full" />
       </div>
