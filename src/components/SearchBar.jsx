@@ -49,9 +49,9 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="bg-[#fff] p-5 shadow-md rounded-md flex gap-2 flex-wrap w-full items-center z-50">
+    <div className="bg-[#fff] p-2 shadow-md rounded-md flex gap-2 flex-wrap w-full items-center z-50">
       <div className="rounded-md flex-auto border-solid border-[1px] border-border">
-        <div className="flex gap-2 px-3 py-4 rounded-md">
+        <div className="flex gap-2 p-3 rounded-md">
           <LiaBedSolid className="text-light text-2xl " />
           <input
             onChange={(e) => setDesenation(e.target.value)}
@@ -65,7 +65,7 @@ const SearchBar = () => {
       <div className="relative rounded-md flex-auto border-solid border-[1px] border-border">
         <div
           onClick={() => setOpenDate(!openDate)}
-          className="flex gap-2 px-3 items-center py-4 rounded-md cursor-pointer"
+          className="flex gap-2 items-center p-3 rounded-md cursor-pointer"
           id="dateDropdown"
         >
           <CiCalendarDate className="text-light text-2xl" />
@@ -91,7 +91,7 @@ const SearchBar = () => {
         <div
           id="optionsDropdown"
           onClick={() => setOpenOptions(!openOptions)}
-          className="flex gap-2 px-3 items-center py-4 rounded-md cursor-pointer"
+          className="flex gap-2 items-center p-3 rounded-md cursor-pointer"
         >
           <PiUser className="text-light text-2xl" />
           <div className="flex-1 text-bold placeholder:text-bold">
@@ -110,7 +110,7 @@ const SearchBar = () => {
       <div className="rounded-md flex-auto">
         <button
           onClick={handleSearch}
-          className="w-full text-lg font-semibold bg-primary px-8 py-4 text-[#fff] rounded-md"
+          className="w-full text-lg font-semibold bg-primary px-6 py-3 text-[#fff] rounded-md"
         >
           Search
         </button>
