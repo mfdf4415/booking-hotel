@@ -71,7 +71,7 @@ const Overview = ({ data }) => {
         </div>
       </div>
       <div>
-        <ShowMap />
+        <ShowMap lat={data.latitude} lng={data.longitude} />
         <p className="text-light max-w-[300px] text-[14px] my-4">
           {data.street}
         </p>
