@@ -4,7 +4,7 @@ const ShowMap = ({ lat = 51, lng = 0 }) => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate(`/map?lat=${lat}&lon=${lng}`);
+    navigate(`/map?lat=${lat}&lng=${lng}`);
   };
 
   return (
