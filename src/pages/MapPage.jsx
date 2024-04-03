@@ -1,7 +1,7 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { useSearchParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import Hotel from "../components/Hotel"
+import Hotel from "../components/Hotel";
 
 const MapPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -11,14 +11,16 @@ const MapPage = () => {
     "http://localhost:5000/hotels",
     `q=${destenation || ""}&accommodates_get=${room || ""}`
   );
-  const position = [51.505, -0.09];
+  const lat = searchParams.get("lat");
+  const lng = searchParams.get("lng");
+
 
   return (
     <div className="">
       <MapContainer
         className="h-[100vh] z-30"
-        center={position}
-        zoom={13}
+        center={[lat,lng]}
+        zoom={5}
         scrollWheelZoom={true}
       >
         <TileLayer
@@ -29,7 +31,7 @@ const MapPage = () => {
         {data.map((item) => (
           <Marker position={[item.latitude, item.longitude]}>
             <Popup>
-              <Hotel  data={item}/>
+              <Hotel data={item} />
             </Popup>
           </Marker>
         ))}
